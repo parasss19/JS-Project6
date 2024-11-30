@@ -15,17 +15,14 @@
       <!-- Control Panel and Canvas -->
       <div class="flex justify-between">
         <div id="controls" class="flex flex-col gap-6 p-4  backdrop-blur-md h-fit w-fit">
-            <div class="flex gap-3 items-center border border-whute rounded-lg p-2 hover:border-blue-400">
-                <label class="text-white font-mono text-lg font-semibold" for="base">Select Color</label>
-                <input id="base" type="color" name="base" value="#ffc600">
-            </div>
-            <button id="magic-button" class="text-white font-mono text-lg font-semibold border border-whute rounded-lg p-2 hover:border-blue-400">Magic Button🪄</button>
-            <button id="erase-button" class="text-white font-mono text-lg font-semibold border border-whute rounded-lg p-2 hover:border-blue-400">Erase</button>
-            <button id="reset-button" class="text-white font-mono text-lg font-semibold border border-whute rounded-lg p-2 hover:border-blue-400">Reset</button>
+            <button id="magic-button" class="text-white font-mono text-lg font-semibold border border-whute rounded-lg p-2 hover:border-blue-400">RGB Effect🪄</button>
+            <button id="erase-button" class="text-white font-mono text-lg font-semibold border border-whute rounded-lg p-2 hover:border-blue-400">Green Screen</button>
+            <button id="reset-button" class="text-white font-mono text-lg font-semibold border border-whute rounded-lg p-2 hover:border-blue-400">RGB Split</button>
+            <button id="magic-button" class="text-white font-mono text-lg font-semibold border border-whute rounded-lg p-2 hover:border-blue-400">Take Screenshot</button>
         </div>
         <div class="w-2/3">
             <canvas id="photo" class="w-full h-[25rem] bg-zinc-600 border border-white rounded-lg shadow-xl"></canvas>
-            <video id="player" class="absolute top-[15px] right-[15px] w-[250px] bg-yellow-500 rounded-xl"></video>
+            <video id="player" class="absolute top-[15px] right-[15px] w-[250px] border border-gray-400 rounded-xl"></video>
         </div>
       </div>
 
