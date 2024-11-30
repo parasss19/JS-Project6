@@ -7,7 +7,35 @@
     <script src="script.js" defer></script>
     <title>Project 6 WebCam</title>
 </head>
-<body>
+<body class="m-0 p-0 box-border  bg-no-repeat bg-cover" style="background-image: url(bg-img1.jpg);">
     
+    <h2 class="text-center font-custom-font font-semibold text-4xl mt-3 mb-1 text-white uppercase">Web Cam Fun<span class="align-text-top">📸</span></h2>
+    
+    <div id="photobooth" class="h-[35rem] p-1 rounded-xl mx-2 backdrop-brightness-50 shadow-lg">  
+      <!-- Control Panel and Canvas -->
+      <div class="flex justify-between">
+        <div id="controls" class="flex flex-col gap-6 p-4  backdrop-blur-md h-fit w-fit">
+            <div class="flex gap-3 items-center border border-whute rounded-lg p-2 hover:border-blue-400">
+                <label class="text-white font-mono text-lg font-semibold" for="base">Select Color</label>
+                <input id="base" type="color" name="base" value="#ffc600">
+            </div>
+            <button id="magic-button" class="text-white font-mono text-lg font-semibold border border-whute rounded-lg p-2 hover:border-blue-400">Magic Button🪄</button>
+            <button id="erase-button" class="text-white font-mono text-lg font-semibold border border-whute rounded-lg p-2 hover:border-blue-400">Erase</button>
+            <button id="reset-button" class="text-white font-mono text-lg font-semibold border border-whute rounded-lg p-2 hover:border-blue-400">Reset</button>
+        </div>
+        <div class="w-2/3">
+            <canvas id="photo" class="w-full h-[25rem] bg-zinc-600 border border-white rounded-lg shadow-xl"></canvas>
+            <video id="player" class="absolute top-[15px] right-[15px] w-[250px] bg-yellow-500 rounded-xl"></video>
+        </div>
+      </div>
+
+       <!-- Screenshot div -->
+       <h1 class="w-fit font-custom-font text-xl font-semibold mx-2 mb-1 text-white">ScreenShots👇 Save & Download</h1>
+       <div id="strip" class="mx-2 rounded-lg p-[2rem] h-[7rem] border border-yellow-500 overflow-x-scroll" style="scrollbar-width: none; -ms-overflow-style: none;"</div>
+    </div>
+
+    <!-- When user take screenshot this audio will play -->
+    <audio class="snap" src="./snap.mp3" hidden></audio>
+
 </body>
 </html>
