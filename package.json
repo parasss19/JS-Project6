@@ -1,0 +1,24 @@
+{
+  "name": "06-webcam_fun",
+  "version": "1.0.0",
+  "description": "",
+  "main": "script.js",
+  "scripts": {
+    "test": "browser-sync start --server --files \"*.css, *.html, *.js\"",
+    "start" : "npx tailwindcss -i ./main.css -o ./output.css --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/parasss19/JS-Project6.git"
+  },
+  "author": "Paras",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/parasss19/JS-Project6/issues"
+  },
+  "homepage": "https://github.com/parasss19/JS-Project6#readme",
+  "devDependencies": {
+    "tailwindcss": "^3.4.15",
+    "browser-sync": "^2.12.5 <2.23.2"
+  }
+}
