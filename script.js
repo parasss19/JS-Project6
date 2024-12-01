@@ -115,6 +115,7 @@ redBtn.addEventListener("click", () => {
     redMode = true;  // Enable Red Effect
     rgbMode = false; // Disable RGB Mode
     redBtn.textContent = "Remove Effect";
+    rgbBtn.textContent = "RGB Effect🪄"; // Reset RGB Button
   }
 });
 rgbBtn.addEventListener("click", () => {
@@ -125,6 +126,7 @@ rgbBtn.addEventListener("click", () => {
     rgbMode = true;   // Enable RGB Effect
     redMode = false;  // Disable Red Mode
     rgbBtn.textContent = "Remove Effect";
+    redBtn.textContent = "Red Effect🪄"; // Reset RGB Button
   }
 });
 
