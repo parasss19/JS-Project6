@@ -33,7 +33,19 @@ function getVideo(){
 //If the user denies permission or an error occurs (e.g., no camera available), this block handles it. 
 
 
+//PaintoCanvas Function - The paintToCanvas function is designed to draw frames from a video element onto an HTML canvas element, effectively creating a real-time video feed on the canvas. 
+function paintToCanvas(){
+  //Get the video's dimensions
+  const width = video.videoWidth
+  const height = video.videoHeight
 
+  //Set the canvas dimensions to match the video's dimensions
+  canvas.width = width
+  canvas.height = height
 
-
+  // Use `setInterval` to repeatedly draw the video frames onto the canvas
+  setInterval(() => {
+    ctx.drawImage(video, 0, 0, width, height)
+  }, 10);
+}
 
