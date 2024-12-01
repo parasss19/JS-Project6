@@ -4,8 +4,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./output.css">
+    <link rel="icon" href="https://fav.farm/🔥" />
     <script src="script.js" defer></script>
     <title>Project 6 WebCam</title>
+
+    <!-- Dynamically added images inside strip div styling -->
+    <style>
+     #strip img {
+        width: 120px;
+        height: auto;
+        overflow-x: scroll;
+     }
+    </style>
 </head>
 <body class="m-0 p-0 box-border  bg-no-repeat bg-cover" style="background-image: url(bg-img1.jpg);">
     
@@ -18,7 +28,7 @@
             <button id="magic-button" class="text-white font-mono text-lg font-semibold border border-whute rounded-lg p-2 hover:border-blue-400">RGB Effect🪄</button>
             <button id="erase-button" class="text-white font-mono text-lg font-semibold border border-whute rounded-lg p-2 hover:border-blue-400">Green Screen</button>
             <button id="reset-button" class="text-white font-mono text-lg font-semibold border border-whute rounded-lg p-2 hover:border-blue-400">RGB Split</button>
-            <button id="magic-button" class="text-white font-mono text-lg font-semibold border border-whute rounded-lg p-2 hover:border-blue-400">Take Screenshot</button>
+            <button onclick="takePhoto()" id="magic-button" class="text-white font-mono text-lg font-semibold border border-whute rounded-lg p-2 hover:border-blue-400">Take Screenshot</button>
         </div>
         <div class="w-2/3">
             <canvas id="photo" class="w-full h-[25rem] bg-zinc-600 border border-white rounded-lg shadow-xl"></canvas>
@@ -27,8 +37,10 @@
       </div>
 
        <!-- Screenshot div -->
-       <h1 class="w-fit font-custom-font text-xl font-semibold mx-2 mb-1 text-white">ScreenShots👇 Save & Download</h1>
-       <div id="strip" class="mx-2 rounded-lg p-[2rem] h-[7rem] border border-yellow-500 overflow-x-scroll" style = "scrollbar-width:none; -ms-overflow-style:none;"> </div>
+       <h1 class="w-fit font-custom-font text-xl font-semibold mx-2 mb-1 text-white align-top">Click To Download🖼️</h1>
+       <div id="strip" class="mx-2 rounded-lg p-[5px] h-[7rem] border border-yellow-500 overflow-x-scroll scrollbar-hide flex justify-center items-center flex-wrap gap-2">
+        <!-- Dynamically added images will appear here  -->
+       </div>
     </div>
 
     <!-- When user take screenshot this audio will play -->

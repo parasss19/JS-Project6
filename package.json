@@ -5,7 +5,7 @@
   "main": "script.js",
   "scripts": {
     "test": "browser-sync start --server --files \"*.css, *.html, *.js\"",
-    "start" : "npx tailwindcss -i ./main.css -o ./output.css --watch"
+    "start": "npx tailwindcss -i ./main.css -o ./output.css --watch"
   },
   "repository": {
     "type": "git",
@@ -18,7 +18,10 @@
   },
   "homepage": "https://github.com/parasss19/JS-Project6#readme",
   "devDependencies": {
-    "tailwindcss": "^3.4.15",
-    "browser-sync": "^2.12.5 <2.23.2"
+    "browser-sync": "^2.12.5 <2.23.2",
+    "tailwindcss": "^3.4.15"
+  },
+  "dependencies": {
+    "tailwind-scrollbar-hide": "^1.1.7"
   }
 }
