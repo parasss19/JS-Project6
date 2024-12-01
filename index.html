@@ -13,7 +13,6 @@
      #strip img {
         width: 120px;
         height: auto;
-        overflow-x: scroll;
      }
     </style>
 </head>
@@ -25,10 +24,9 @@
       <!-- Control Panel and Canvas -->
       <div class="flex justify-between">
         <div id="controls" class="flex flex-col gap-6 p-4  backdrop-blur-md h-fit w-fit">
-            <button id="magic-button" class="text-white font-mono text-lg font-semibold border border-whute rounded-lg p-2 hover:border-blue-400">RGB Effect🪄</button>
-            <button id="erase-button" class="text-white font-mono text-lg font-semibold border border-whute rounded-lg p-2 hover:border-blue-400">Green Screen</button>
-            <button id="reset-button" class="text-white font-mono text-lg font-semibold border border-whute rounded-lg p-2 hover:border-blue-400">RGB Split</button>
-            <button onclick="takePhoto()" id="magic-button" class="text-white font-mono text-lg font-semibold border border-whute rounded-lg p-2 hover:border-blue-400">Take Screenshot</button>
+            <button  id="red-button" class="text-white font-mono text-lg font-semibold border border-whute rounded-lg p-2 hover:border-blue-400">Red Effect🪄</button>
+            <button  id="rgb-button" class="text-white font-mono text-lg font-semibold border border-whute rounded-lg p-2 hover:border-blue-400">RGB Effect🪄</button>
+            <button  onclick="takePhoto()" id="screenshot-button" class="text-white font-mono text-lg font-semibold border border-whute rounded-lg p-2 hover:border-blue-400">Take Screenshot</button>
         </div>
         <div class="w-2/3">
             <canvas id="photo" class="w-full h-[25rem] bg-zinc-600 border border-white rounded-lg shadow-xl"></canvas>

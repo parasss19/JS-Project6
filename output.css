@@ -633,14 +633,6 @@ video {
   width: 100%;
 }
 
-.max-w-\[90\%\] {
-  max-width: 90%;
-}
-
-.flex-row {
-  flex-direction: row;
-}
-
 .flex-col {
   flex-direction: column;
 }
@@ -661,20 +653,16 @@ video {
   justify-content: space-between;
 }
 
-.gap-6 {
-  gap: 1.5rem;
-}
-
 .gap-2 {
   gap: 0.5rem;
 }
 
-.overflow-x-scroll {
-  overflow-x: scroll;
+.gap-6 {
+  gap: 1.5rem;
 }
 
-.whitespace-nowrap {
-  white-space: nowrap;
+.overflow-x-scroll {
+  overflow-x: scroll;
 }
 
 .rounded-lg {
@@ -745,16 +733,8 @@ video {
   vertical-align: top;
 }
 
-.align-middle {
-  vertical-align: middle;
-}
-
 .align-text-top {
   vertical-align: text-top;
-}
-
-.align-text-bottom {
-  vertical-align: text-bottom;
 }
 
 .font-mono {

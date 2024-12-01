@@ -2,8 +2,8 @@ const canvas = document.querySelector("#photo")
 const video = document.querySelector("#player")
 const strip = document.querySelector("#strip")
 const snap = document.querySelector(".snap")
-
 const ctx = canvas.getContext('2d')
+
 
 //1 function getVideo => is designed to access the user's camera and display the video feed on a webpage. 
 function getVideo(){
@@ -13,13 +13,11 @@ function getVideo(){
         video.srcObject = localMediaStream
         video.play()    //when video start playing it call the paintToCanvas() func coz we attached eventlistener(canplay) to video 
       })
-
       //If the user denies permission or an error occurs (e.g., no camera available), this block handles it. 
       .catch((err)=>{
         console.log("Error", err)
       })
 }
-
 getVideo()
 
 //Notes
@@ -47,7 +45,30 @@ function paintToCanvas(){
 
   // Use `setInterval` to repeatedly draw the video frames onto the canvas
   return setInterval(() => {
+    //Draw the video on the canvas
     ctx.drawImage(video, 0, 0, width, height)
+
+    //Effects logic
+    //1 take the pixels out of the canvas
+    //2 pass the pixels value inside redEffect func and it convert the pixels array and return the modified pixels array
+    //3 put the pixels back to canvas 
+
+    //1
+    let pixels = ctx.getImageData(0, 0, width, height)
+    //console.log(pixels) 
+
+    //2 
+    // Red Effect
+    if(redMode){
+      pixels = redEffect(pixels)
+    }
+    // RGB effect
+    else if(rgbMode){
+      pixels = rgbEffect(pixels)
+    }
+    
+    //3
+    ctx.putImageData(pixels, 0, 0)
   }, 10);
 }
 
@@ -76,3 +97,61 @@ function takePhoto(){
   strip.insertBefore(link, strip.firstChild)
 }
 
+
+//4 ******************* Effects **********************
+const redBtn = document.getElementById("red-button")
+const rgbBtn = document.getElementById("rgb-button")
+
+//Track state for button functionality
+let redMode = false
+let rgbMode = false
+
+// addEventListener to toggle the mode(redMode or rgbMode) when the buttons are clicked. Ensured only one mode is active at a time by disabling the other mode in the event listener.
+redBtn.addEventListener("click", () => {
+  if(redMode) {
+    redMode = false;  //Disable Red Effect(initially)
+    redBtn.textContent = "Red Effect🪄";
+  } else {
+    redMode = true;  // Enable Red Effect
+    rgbMode = false; // Disable RGB Mode
+    redBtn.textContent = "Remove Effect";
+  }
+});
+rgbBtn.addEventListener("click", () => {
+  if (rgbMode) {
+    rgbMode = false;    // Disable RGB Effect(initially)
+    rgbBtn.textContent = "RGB Effect🪄";
+  } else {
+    rgbMode = true;   // Enable RGB Effect
+    redMode = false;  // Disable Red Mode
+    rgbBtn.textContent = "Remove Effect";
+  }
+});
+
+//a red effect
+function redEffect(pixels){
+  for (let i = 0; i < pixels.data.length; i += 4) {
+    pixels.data[i+0] += 100; //red
+    pixels.data[i+1] -= 50; //green
+    pixels.data[i+2] *= 0.4; //blue
+    //we dont change alpha value 
+  }
+  return pixels  
+}
+//In loop we iterate i = i+4 coz
+//pixels.data[] array has 4 values consecutive millions times
+//1st value for red
+//2nd for green
+//3rd for blue
+//4th for alpha
+
+//b rgb effect
+function rgbEffect(pixels){
+  for (let i = 0; i < pixels.data.length; i += 4) {
+     pixels.data[i-500] = pixels.data[i+0]  //red
+     pixels.data[i+40] = pixels.data[i+1]  //green
+     pixels.data[i-550] = pixels.data[i+2]  //blue
+    //we dont change alpha value 
+  }
+  return pixels  
+}
